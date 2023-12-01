@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Weather Data</title>
+    <link rel="stylesheet" href="ManageData.css">
+</head>
+<body style="background-image: url('image/6.jpg');">
+    <div class="container">
+        <h1>Manage Weather Data</h1>
+
+        <!-- Buttons to select dataset -->
+        <button class="dataset-button" onclick="loadTemperatureData()">Temperature Data</button>
+        <button class="dataset-button" onclick="loadRainData()">Rain Data</button>
+
+        <!-- Dataset Table will be loaded here -->
+        <div id="datasetTable"></div>
+    </div>
+
+    <script src="DataManager.js"></script>
+    <script>
+        // Sample demo data for testing
+        var demoData = [
+            { "Date": "2023-01-01", "Value": 25 },
+            { "Date": "2023-01-02", "Value": 22 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-01", "Value": 25 },
+            { "Date": "2023-01-02", "Value": 22 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-03", "Value": 28 },
+            { "Date": "2023-01-03", "Value": 28 },
+            // Add more rows as needed
+        ];
+
+        function loadTemperatureData() {
+            loadDemoDataset('Temperature', demoData);
+        }
+
+        function loadRainData() {
+            loadDemoDataset('Rain', demoData);
+        }
+
+        function loadDemoDataset(datasetType, data) {
+            // Simulating an AJAX call with demo data
+            displayDataset(data);
+        }
+
+        function loadDataset(datasetType) {
+            // Use AJAX to fetch data from your PHP script based on the selected dataset
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Parse the JSON response
+                    var data = JSON.parse(xhr.responseText);
+
+                    // Display the dataset
+                    displayDataset(data);
+                }
+            };
+
+            // Replace 'your_php_script.php' with the actual path to your PHP script
+            xhr.open('GET', 'your_php_script.php?dataset=' + datasetType, true);
+            xhr.send();
+        }
+
+        function displayDataset(data) {
+            // Create the HTML table
+            var table = '<table border="1">';
+            for (var i = 0; i < data.length; i++) {
+                table += '<tr>';
+                for (var key in data[i]) {
+                    if (data[i].hasOwnProperty(key)) {
+                        table += '<td>' + data[i][key] + '</td>';
+                    }
+                }
+                table += '</tr>';
+            }
+            table += '</table>';
+
+            // Set the table as the content
+            document.getElementById('datasetTable').innerHTML = table;
+        }
+    </script>
+</body>
+</html>

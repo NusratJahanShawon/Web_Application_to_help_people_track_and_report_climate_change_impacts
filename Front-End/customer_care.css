@@ -1,0 +1,263 @@
+/* Body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('image/sunset.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+    
+}
+
+h1 {
+    text-align: center;
+    color: hsl(0, 18%, 96%);
+    margin-top: 10px;
+    font-size: 6vh;
+}
+
+/* .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+} */
+.buttons {
+    display: flex;
+    flex-direction: column; /* Change from 'row' to 'column' */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.sliding-box {
+    position: fixed;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    transition: bottom 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.sliding-box.show {
+    bottom: 20px;
+}
+
+.message-content {
+    font-size: 16px;
+    color: #333;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+.message-metadata {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.metadata-item {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.close-btn,
+.forward-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.close-btn {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.forward-btn {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.close-btn:hover,
+.forward-btn:hover {
+    transform: scale(1.05);
+}
+
+.close-btn:active,
+.forward-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* ... (Previous CSS styles) */
+
+/* Button styles with colorful and animated effects */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Adding transition for background-color, transform, and color */
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+    color: #fff;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* ... (Other CSS styles) */
+
+
+/* ... (Previous CSS styles) ... */
+
+.side-sliding-box {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    z-index: 1001;
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+}
+
+.side-sliding-box.show {
+    right: 0;
+}
+
+.side-content {
+    padding: 20px;
+}
+
+.side-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.close-side-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.close-side-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.close-side-btn:active {
+    transform: scale(0.95);
+}
+
+.side-button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.forward-side-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #3498db;
+    color: #fff;
+}
+
+.forward-side-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.forward-side-btn:active {
+    transform: scale(0.95);
+}
+
+
+.mail-box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .mail-content {
+    margin: 20px;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .close-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .close-btn:hover {
+    background-color: #da190b;
+  }
+  
