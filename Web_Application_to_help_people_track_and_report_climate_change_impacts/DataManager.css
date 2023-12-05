@@ -212,3 +212,27 @@ section{
   margin-bottom: 20px;
 }
 
+.data-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.data-options {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.data-options a {
+  color: #f9f6f6;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+.data-dropdown:hover .data-options {
+  display: block;
+}

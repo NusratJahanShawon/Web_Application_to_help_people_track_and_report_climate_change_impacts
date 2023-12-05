@@ -1,5 +1,5 @@
 <?php 
-include "./Temp_data_Table.php";
+include "./dataBase_Connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -27,9 +27,10 @@ include "./Temp_data_Table.php";
     <div class="nav">
         <div class="left">
             <a href="HomePage-AfterLogin.html">Home</a>
-            <a href="ManageData.html">Manage Data</a>
+            <a href="Manage_temp_Data.php">Manage Temperature Data</a>
+            <a href="Manage_rain_Data.php">Manage Rainn Data</a>
             <a href="weather_dashboard.html">Weekly Forecast</a>
-            <a href="View_TempTable.php">Report Problem</a>
+            <a href="">Report Problem</a>
             <a href="#sendMail">Send Mail</a>
             <a href="#mailBox">Mail Box</a>
         </div>
