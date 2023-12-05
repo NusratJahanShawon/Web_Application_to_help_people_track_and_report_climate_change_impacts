@@ -1,0 +1,43 @@
+.navbar {
+    position: fixed;
+    top: 65px;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.navbar button {
+    margin: 10px;
+    padding: 2.5px 2px;
+    color: rgb(236, 236, 236);
+    font-size: 20px;
+    background-color: transparent; 
+    border: none; 
+    font-family: 'Della Respira', serif;
+    /* font-weight: bold;  */
+
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+
+h1 {
+    color: white;
+    position: absolute;
+    font-family: 'Della Respira', serif;
+    font-weight: bold;
+}
+
+
+.navbar button:hover, .navbar button:focus, .navbar button:active {
+    transform: scale(1.1);
+}
+
+body {
+    margin: 0;
+    height: 100px;
+    background-image: url('image/landscape_1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

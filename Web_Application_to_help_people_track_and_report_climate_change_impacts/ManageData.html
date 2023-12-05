@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Weather Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="ManageData.css">
+</head>
+<!-- <body style="background-image: url('image/6.jpg');"> -->
+    <div class="container">
+        <h2 class="mt-5 mb-5">Manage Weather Data </h2>
+        <hr>
+        <!-- <h1>Manage Weather Data</h1> -->
+        <!-- <div class="container">           -->
+            <div class="mb-5">           
+            <div class="row">         
+            <div class="form-group col-md-6-mb-3">           
+            <label for="name">Temp_date</label>            
+            <input           
+            type="date"            
+            name="Temperature_date"            
+            class="form-control"            
+            id="Temperature_date"           
+            placeholder="Enter Temperature_date"
+            />           
+            </div>   
+            <div class="form-group col-md-6-mb-3">           
+                <label for="name">Temp_time</label>            
+                <input           
+                type="time"            
+                name="Temp_time"            
+                class="form-control"            
+                id="Temp_time"           
+                placeholder="Enter Temp_time"
+                />         
+            </div>
+            <div class="form-group col-md-6-mb-3">           
+                <label for="name">Temp_location</label>            
+                <input           
+                type="text"            
+                name="Temp_location"            
+                class="form-control"            
+                id="Temp_location"           
+                placeholder="Enter Temp_location"
+                />         
+            </div>
+            <div class="form-group col-md-6-mb-3">           
+                <label for="name">Temp_pressure</label>            
+                <input           
+                type="text"            
+                name="Temp_pressure"            
+                class="form-control"            
+                id="Temp_pressure"           
+                placeholder="Enter Temp_pressure"
+                />         
+            </div>
+            <div class="form-group col-md-6-mb-3">           
+                <label for="name">Temp_dewpoint</label>            
+                <input           
+                type="text"            
+                name="Temp_dewpoint"            
+                class="form-control"            
+                id="Temp_dewpoint"           
+                placeholder="Enter Temp_dewpoint"
+                />         
+            </div>
+            <div class="form-group col-md-6-mb-3">           
+                <label for="name">Temp_value</label>            
+                <input           
+                type="text"            
+                name="Temp_value"            
+                class="form-control"            
+                id="Temp_value"           
+                placeholder="Enter Temp_value"
+                />         
+            </div>
+            <div class="form-group col-md-6-mb-3">           
+                <label for="name">Temp_measurementScale</label>            
+                <input           
+                type="number"            
+                name="Temp_measurementScale"            
+                class="form-control"            
+                id="Temp_measurementScale"           
+                placeholder="Enter Temp_measurementScale"
+                />         
+            </div>
+            <div class="col-lg-12 mt-5">
+                <button class="btn btn-success" id="Submit" onclick="AddData()">Add Data</button>               
+                <button class="btn btn-primary" id="Update">Update</button>                
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row mt-5">
+            <div class="col-12">
+                <table class="table table-bordered" id="crudTable">
+                    <thead>
+                        <tr>
+                            <th>Temp_date</th>
+                            <th>Temp_time</th>
+                            <th>Temp_location</th>
+                            <th>Temp_pressure</th>
+                            <th>Temp_dewpoint</th>
+                            <th>Temp_value</th>
+                            <th>Temp_measurementScale</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="ManagerData.js"></script>
+</body>
+</html>
