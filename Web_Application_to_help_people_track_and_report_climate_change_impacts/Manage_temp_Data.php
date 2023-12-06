@@ -30,58 +30,98 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>View Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    </head>
-    <body>
-    
+    <style>
+        body {
+          background-image: url('image/big.jpg'); /* Specify the path to your background image */
+            background-size: cover; /* Cover the entire viewport */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+        }
+
+        tbody {
+            background-color: #ffffff; /* White background color for tbody */
+        }
+        thead, tbody {
+            background-color: #ffffff; /* White background color for thead and tbody */
+        }
+
+        form {
+            max-width: 500px; /* Set max width for the form */
+            margin: 0 auto; /* Center the form on the page */
+            background-color: #ffe4c4; /* White background color for the form */
+            padding: 15px; /* Add some padding to the form */
+            border-radius: 5px; /* Add border radius to the form */
+        }
+    </style>
+</head>
+<body>
     <div class="container">
-<table class="table">
-    <thead>
-    <tr>
-        <th>t_id</th>
-        <th>t_date</th>
-        <th>t_time</th>
-        <th>t_location</th>
-        <th>t_pressure</th>
-        <th>t_due_point</th>
-        <th>t_value</th>
-        <th>t_measurement_scale</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody> 
-    <h2>Update Temperature Data</h2>
-<form action="" method="POST">
-  <fieldset>
-    <legend>Temperature information:</legend>
-    t_date:<br>
-    <input type="date" name="t_date">
-    <br>
-    t_time:<br>
-    <input type="time" name="t_time">
-    <br>
-    t_location:<br>
-    <input type="text" name="t_location">
-    <br>
-    t_pressure:<br>
-    <input type="text" name="t_pressure">
-    <br>
-    t_due_point:<br>
-    <input type="text" name="t_due_point">
-    <br>
-    t_value:<br>
-    <input type="text" name="t_value">
-    <br>
-    t_measurement_scale:<br>
-    <input type="text" name="t_measurement_scale">
-    <br>
-    <input type="submit" name="submit" value="Submit">
-  </fieldset>
-</form>
+        <h2 class="text-center">Update Temperature Data</h2>
+        <form action="" method="POST">
+            <fieldset>
+                <legend>Temperature Information:</legend>
+                <div class="form-group">
+                    <label for="t_date">t_date:</label>
+                    <input type="date" class="form-control" name="t_date">
+                </div>
+                <div class="form-group">
+                    <label for="t_time">t_time:</label>
+                    <input type="time" class="form-control" name="t_time">
+                </div>
+                <div class="form-group">
+                    <label for="t_location">t_location:</label>
+                    <input type="text" class="form-control" name="t_location">
+                </div>
+                <div class="form-group">
+                    <label for="t_pressure">t_pressure:</label>
+                    <input type="text" class="form-control" name="t_pressure">
+                </div>
+                <div class="form-group">
+                    <label for="t_due_point">t_due_point:</label>
+                    <input type="text" class="form-control" name="t_due_point">
+                </div>
+                <div class="form-group">
+                    <label for="t_value">t_value:</label>
+                    <input type="text" class="form-control" name="t_value">
+                </div>
+                <div class="form-group">
+                    <label for="t_measurement_scale">t_measurement_scale:</label>
+                    <input type="text" class="form-control" name="t_measurement_scale">
+                </div>      
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+                </div>
+            </fieldset>
+        </form>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>t_id</th>
+                    <th>t_date</th>
+                    <th>t_time</th>
+                    <th>t_location</th>
+                    <th>t_pressure</th>
+                    <th>t_due_point</th>
+                    <th>t_value</th>
+                    <th>t_measurement_scale</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
         <?php
 
             if ($result->num_rows > 0) {

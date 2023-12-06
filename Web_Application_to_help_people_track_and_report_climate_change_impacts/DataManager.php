@@ -42,7 +42,7 @@ include "./dataBase_Connection.php";
                     <a href="#">Settings</a>
                     <a href="#">Update</a>
                     <a href="#">Help</a>
-                    <a href="login.html">Sign Out</a>
+                    <a href="login.php">Sign Out</a>
                 </div>
             </div>
         </div>

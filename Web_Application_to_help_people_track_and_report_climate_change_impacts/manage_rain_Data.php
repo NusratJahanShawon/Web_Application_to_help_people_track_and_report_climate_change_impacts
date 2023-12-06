@@ -32,18 +32,89 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>View Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    </head>
-    <body>
-    
+    <style>
+        body {
+          background-image: url('image/rain.jpg'); /* Specify the path to your background image */
+            background-size: cover; /* Cover the entire viewport */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+        }
+
+        tbody {
+            background-color: #ffffff; /* White background color for tbody */
+        }
+        thead, tbody {
+            background-color: #ffffff; /* White background color for thead and tbody */
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto; 
+            padding: 15px; 
+            border-radius: 5px;
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
     <div class="container">
-<table class="table">
+        <h2 class="text-center">Update Rain Data</h2>
+        <form action="" method="POST">
+            <fieldset>
+                <legend>Rain Information:</legend>
+                <div class="form-group">
+                    <label for="r_date">r_date:</label>
+                    <input type="date" class="form-control" name="r_date">
+                </div>
+                <div class="form-group">
+                    <label for="r_time">r_time:</label>
+                    <input type="time" class="form-control" name="r_time">
+                </div>
+                <div class="form-group">
+                    <label for="r_location">r_location:</label>
+                    <input type="text" class="form-control" name="r_location">
+                </div>
+                <div class="form-group">
+                    <label for="r_duration">r_duration:</label>
+                    <input type="text" class="form-control" name="r_duration">
+                </div>
+                <div class="form-group">
+                    <label for="r_intensity">r_intensity:</label>
+                    <input type="text" class="form-control" name="r_intensity">
+                </div>
+                <div class="form-group">
+                    <label for="r_humidity">r_humidity:</label>
+                    <input type="text" class="form-control" name="r_humidity">
+                </div>
+                <div class="form-group">
+                    <label for="r_windspeed">r_windspeed:</label>
+                    <input type="text" class="form-control" name="r_windspeed">
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
+    
+<table class="table table-bordered table-striped">
     <thead>
-    <tr>
+         <tr>
         <th>r_id</th>
         <th>r_date</th>
         <th>r_time</th>
@@ -59,34 +130,6 @@ if (isset($_POST['submit'])) {
 
 
 
-    <h2> Update Rain Data</h2>
-<form action="" method="POST">
-  <fieldset>
-    <legend>Rain information:</legend>
-    r_date:<br>
-    <input type="date" name="r_date">
-    <br>
-    r_time:<br>
-    <input type="time" name="r_time">
-    <br>
-    r_location:<br>
-    <input type="text" name="r_location">
-    <br>
-    r_duration:<br>
-    <input type="text" name="r_duration">
-    <br>
-    r_intensity:<br>
-    <input type="text" name="r_intensity">
-    <br>
-    r_humidity:<br>
-    <input type="text" name="r_humidity">
-    <br>
-    r_windspeed:<br>
-    <input type="text" name="r_windspeed">
-    <br>
-    <input type="submit" name="submit" value="Submit">
-  </fieldset>
-</form>
         <?php
 
             if ($result->num_rows > 0) {
